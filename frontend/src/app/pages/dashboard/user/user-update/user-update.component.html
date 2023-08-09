@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="my-4">
+    <h3>Update user</h3>
+  </div>
+  <table class="table border border-2">
+<div class="card p-3">
+  <form [formGroup]="userUpdate">
+<div class="mb-3">
+  <label for="Username" class="form-label">Username</label>
+  <input
+  formControlName="username" type="text" class="form-control" id="username" >
+</div>
+<div class="mb-3">
+  <label for="Email" class="form-label">Email</label>
+  <input
+  formControlName="email"
+  type="email" class="form-control" id="email" >
+</div>
+<div class="mb-3">
+  <label for="Phone" class="form-label">Phone</label>
+  <input
+  formControlName="phone"
+  type="" class="form-control" id="phone">
+</div>
+<button type="button" class="btn btn-primary" (click)="Update()">Update</button>
+</form>
+</div>

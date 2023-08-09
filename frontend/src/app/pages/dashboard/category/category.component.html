@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="my-4 bg-secondary text-white p-3 rounded d-flex justify-content-between">
+    <h3>Category</h3>
+    <button type="button" class="btn btn-secondary btn-sm border" [routerLink]="['/','dashboard', 'Category', 'add']">Tambah Category</button>
+  </div>
+  <table class="table table-bordered border border-dark rounded">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let data of categoryList;let i=index;">
+        <th scope="row" class="text-center">{{i + 1}}</th>
+        <td>{{ data.name }}</td>
+
+        <td class="d-flex justify-content-center gap-2">
+        <fa-icon [icon]="faInfoCircle" [routerLink]="['/','dashboard', 'category', data.id]"></fa-icon>
+        <fa-icon [icon]="faEdit" [routerLink]="['/','dashboard', 'category', 'update', data.id]"></fa-icon>
+        <fa-icon [icon]="faTrashAlt" (click)="delete(data.id)"></fa-icon>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="my-4">
+    <h3>Update product</h3>
+  </div>
+  <table class="table border border-2">
+<div class="card p-3">
+  <form [formGroup]="productUpdate" (ngSubmit)="Update()">
+<div class="mb-3">
+  <label for="Name" class="form-label">Name</label>
+  <input
+  formControlName="name" type="text" class="form-control" id="name" >
+</div>
+<div class="mb-3">
+  <label for="Category" class="form-label">Category</label>
+  <select class="form-control" id="category" formControlName="categoryId">
+    <option value="" disabled selected>
+      Select a category
+    </option>
+    <option *ngFor="let category of category" [value]="category.id">
+      {{ category.name }}
+    </option>
+  </select>
+</div>
+<div class="mb-3">
+  <label for="stock" class="form-label">Stock</label>
+  <input
+  formControlName="stock"
+  type="" class="form-control" id="stock">
+</div>
+<div class="mb-3">
+  <label for="price" class="form-label">Price</label>
+  <input
+  formControlName="price"
+  type="" class="form-control" id="price">
+</div>
+<button type="button" class="btn btn-primary" (click)="Update()">Update</button>
+</form>
+</div>
